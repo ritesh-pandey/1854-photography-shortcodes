@@ -161,14 +161,14 @@ $availableCurrencyList = [
 .section-pricing-tables-mobile .panel-payment-switcher {
 text-align: left !important;
 }
-.section-pricing-tables-mobile .panel-payment-switcher button {
+.section-pricing-tables-mobile .panel-payment-switcher button, .section-pricing-tables-desktop .panel-payment-switcher button {
 border: #eaeaea !important;
 background: #f7f7f7;
 color: #256C69;
 width: 160px;
 display: inline;
 }
-.section-pricing-tables-mobile .panel-payment-switcher .btn-selected {
+.section-pricing-tables-mobile .panel-payment-switcher .btn-selected, .section-pricing-tables-desktop .panel-payment-switcher .btn-selected {
 background: #fff;
 color: #000;
 border: 2px solid #000 !important;
@@ -194,13 +194,33 @@ font-size: 30px;
 .panel-mobile-pricing .panel-mobile-pricing--content .btn {
 display: block;
 }
+.section-pricing-tables-desktop .badge-save-desktop {
+color: #256C69;
+border: 2px solid #266b69;
+padding: 6px 0;
+font-weight: bold;
+font-size: 10px;
+display: block;
+margin: 2px 0;
+}
+.section-pricing-tables-desktop .btn-cta {
+display: block;
+background: #266b69;
+font-size: 14px;
+white-space: nowrap;
+}
+.section-pricing-tables-desktop .access-price {
+white-space: nowrap;
+}
+.section-pricing-tables-desktop .table-row {
+height: 180px;
+}
 </style>
 <div class="annual-pricing-as-default id-join-us-print-monthly-quarterly--03">
 	<?php foreach ($availableCurrencyList as $currenyObj) : ?>
 		<div id="price-grid" class="<?php echo $currenyObj['zephrClass']; ?>">
 			<!-- SECTION :: MOBILE -->
 			<div class="section-pricing-tables-mobile">
-				<img src="/wp-content/uploads/2021/07/1854-BJP-Black-Logo-6.png" width="360" style="transform: translateX(-20px);"/>
 
 				<!-- Payment Switcher -->
 				<div class="panel-payment-switcher" style="text-align: left !important;">
@@ -233,23 +253,21 @@ display: block;
 							<p style="color: #000;">Unlimited digital access to British Journal of Photography’s award-winning photographic journalism. </p>
 							
 							<div class="monthly">
-								<a href="<?php $pricingMaster[$column]['quarterly']['joinLink']; ?>" class="btn">GET <?php echo $planDisplayNames[$column]; ?></a>
+								<a href="<?php echo $pricingMaster[$column]['quarterly']['joinLink']; ?>" class="btn">GET <?php echo $planDisplayNames[$column]; ?></a>
 							</div>
 							<div class="annually">
-								<a href="<?php $pricingMaster[$column]['annually']['joinLink']; ?>" class="btn">GET <?php echo $planDisplayNames[$column]; ?></a>
+								<a href="<?php echo $pricingMaster[$column]['annually']['joinLink']; ?>" class="btn">GET <?php echo $planDisplayNames[$column]; ?></a>
 							</div>
 						</div>
 					</div>
 				<?php endforeach; ?>
-				<div><img src="https://www.1854.photography/wp-content/uploads/2022/07/Debashish-Chakrabarty_03_1.jpg" /></div>
 			</div>
 
 			<!-- SECTION :: DESKTOP -->
 			<div class="section-pricing-tables-desktop">
-				<img src="/wp-content/uploads/2021/07/1854-BJP-Black-Logo-6.png" width="360" style="transform: translateX(-10px);"/>
 				<table id="tbl-pricing" class="<?php echo $featuredPlanClass; ?>">
 					<thead>
-						<tr>
+						<tr class="table-row">
 							<th colspan="2">
 								<!-- Payment Switcher -->
 								<div class="panel-payment-switcher">
@@ -261,7 +279,7 @@ display: block;
 							<?php foreach ($columns as $column) : ?>
 								<?php $pricingMaster = $currenyObj['plans']; ?>
 								<?php $currencySymbol = $currenyObj['symbol']; ?>
-								<tr>
+								<tr class="table-row">
 								<th>
 								<h2><?php echo $planDisplayNames[$column]; ?></h2>
 								<p style="color: #000;">Unlimited digital access to British Journal of Photography’s award-winning photographic journalism. </p>
@@ -270,13 +288,13 @@ display: block;
 									<div class="annually">
 								
 										<p class="access-price"><?php echo $currencySymbol; ?><?php echo $pricingMaster[$column]['annually']['price'] / 4; ?><span>/ quarter</span></p>
-										<a class="badge-save" href="<?php echo $pricingMaster[$column]['annually']['joinLink']; ?>">SAVE <?php echo round(($pricingMaster[$column]['quarterly']['price'] - ($pricingMaster[$column]['annually']['price'] / 4)) * 100 / $pricingMaster[$column]['quarterly']['price']); ?>%</a>
-										<a class="badge-save" href="#">GET <?php echo $planDisplayNames[$column]; ?></a>
+										<a class="badge-save-desktop" href="#">SAVE <?php echo round(($pricingMaster[$column]['quarterly']['price'] - ($pricingMaster[$column]['annually']['price'] / 4)) * 100 / $pricingMaster[$column]['quarterly']['price']); ?>%</a>
+										<a class="btn btn-cta" href="<?php echo $pricingMaster[$column]['annually']['joinLink']; ?>">GET <?php echo $planDisplayNames[$column]; ?></a>
 									</div>
 
 									<div class="monthly">
 										<p class="access-price"><?php echo $currencySymbol; ?><?php echo $pricingMaster[$column]['quarterly']['price']; ?><span>/ quarter</span></p>
-										<a class="badge-save" href="#">GET <?php echo $planDisplayNames[$column]; ?></a>
+										<a class="btn btn-cta" href="<?php echo $pricingMaster[$column]['quarterly']['joinLink']; ?>">GET <?php echo $planDisplayNames[$column]; ?></a>
 									</div>
 								</th>
 								</tr>
