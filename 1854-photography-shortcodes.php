@@ -17,7 +17,7 @@ function p10y_1854_shrtcd_zephr_join_us_editorial($atts) {
 	$columns = ['dl', 'dps'];
 	$featuredPlan = '';
 	ob_start();
-	include plugin_dir_url(__FILE__) . 'zephr-join-us-editorial/pricing-matrix.php';
+	include plugin_dir_path(__FILE__) . 'zephr-join-us-editorial/pricing-matrix.php';
 	$html = ob_get_clean();
 	return $html;
 }
