@@ -22,3 +22,14 @@ function p10y_1854_shrtcd_zephr_join_us_editorial($atts) {
 	return $html;
 }
 add_shortcode('p10y_1854_z', 'p10y_1854_shrtcd_zephr_join_us_editorial');
+
+/**
+ * Callback function for Journal Collection Menu
+ */
+function p10y_1854_shrtcd_journal_collection_menu($atts) {
+	ob_start();
+	include plugin_dir_path(__FILE__) . 'p10y_1854_journal_collection_menu.php';
+	$html = ob_get_clean();
+	return $html;
+}
+add_shortcode('p10y_1854_journal_collection_menu', 'p10y_1854_shrtcd_journal_collection_menu');
