@@ -2,7 +2,7 @@
 /**
  * Plugin Name: 1854.photography Shortcodes
  * Description: Provides custom shortcodes which can be used to render custom HTML across site.
- * Version: 1
+ * Version: 2
  * Author: Ritesh Pandey
  */
 
@@ -28,7 +28,7 @@ add_shortcode('p10y_1854_z', 'p10y_1854_shrtcd_zephr_join_us_editorial');
  */
 function p10y_1854_shrtcd_journal_collection_menu($atts) {
 	ob_start();
-	include plugin_dir_path(__FILE__) . 'p10y_1854_journal_collection_menu.php';
+	include plugin_dir_path(__FILE__) . 'journal-collection-menu/p10y_1854_journal_collection_menu.php';
 	$html = ob_get_clean();
 	return $html;
 }
