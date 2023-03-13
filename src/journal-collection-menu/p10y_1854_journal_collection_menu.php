@@ -84,8 +84,6 @@ $mainMenuItems = [
 	['link' => 'agenda',             'displayText' => 'Agenda'],
 	['link' => 'bookshelf',          'displayText' => 'Bookshelf'],
 	['link' => 'projects',           'displayText' => 'Projects'],
-	['link' => 'features',           'displayText' => 'Features'],
-	['link' => 'activism-protest',   'displayText' => 'Activism & Protest'],
 	['link' => 'industry-insights',  'displayText' => 'Industry Insights']
 ];
 $highlightClass = 'latest-item';
@@ -246,7 +244,6 @@ margin-bottom: 10px;
         <li><a href="/collection/agenda/" class="mobile-header-item">agenda</a></li>
         <li><a href="/collection/bookshelf" class="mobile-header-item">bookshelf</a></li>
         <li><a href="/collection/projects/" class="mobile-header-item">projects</a></li>
-        <li><a href="/collection/features/" class="mobile-header-item">features</a></li>
         <li><a href="/collection/ones-to-watch-2021/" class="mobile-header-item">theme in focus</a></li>
         <li><a href="/collection/industry-insights" class="mobile-header-item">industry insights</a></li>
         <li><a href="/bjp-print-issue" class="mobile-header-item">magazine</a></li>
