@@ -20,7 +20,7 @@
 
 .journal_menu li a {
   text-decoration : none;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .journal_menu .heading_flex {
@@ -29,6 +29,7 @@
   max-width: 75em;
   margin: auto;
   padding: 0 16px;
+  justify-content: space-between;
 }
 
 .journal_menu .heading_flex .header-item {
@@ -38,7 +39,7 @@
 .journal_menu .heading_flex .header-item.explore-item {  
   color: #266B68;
   cursor: pointer;
-  font-size: 13px !important;
+  font-size: 14px !important;
   padding-top: 2px;
 }
 
