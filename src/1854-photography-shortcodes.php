@@ -2,7 +2,7 @@
 /**
  * Plugin Name: 1854.photography Shortcodes
  * Description: Provides custom shortcodes which can be used to render custom HTML across site.
- * Version: 2
+ * Version: 3
  * Author: Ritesh Pandey
  */
 
